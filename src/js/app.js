@@ -1,12 +1,12 @@
-export default class Validator {
-  validateUsername(name) {
-    const regExpOne = /^[^\W\d_][\w-]+[^\W\d_]$/g;
-    const regExpTwo = /\d{3}/;
+import Magician from './Magician';
+import Daemon from './Daemon';
+import Bowman from './Bowman';
 
-    if (regExpOne.test(name) && !regExpTwo.test(name)) {
-      this.name = name;
-      return true;
-    }
-    throw new Error(`Имя ${name} некорректно`);
-  }
-}
+// ? Создаём персонажей:
+const magician = new Magician('Ivan', 'Magician');
+const daemon = new Daemon('Ilya', 'Daemon');
+const bowman = new Bowman('Dmitry', 'Bowman');
+
+// ? Чисто глянуть, что мы создали:
+// eslint-disable-next-line no-console
+console.log(magician, daemon, bowman);
